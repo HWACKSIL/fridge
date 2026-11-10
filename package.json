@@ -1,0 +1,21 @@
+{
+  "name": "fridge-recipe-assistant",
+  "version": "1.0.0",
+  "description": "AI 냉장고 파먹기 - 식재료 인식 및 맞춤형 레시피 추천 웹앱",
+  "main": "index.html",
+  "scripts": {
+    "start": "node dev-server.js",
+    "dev": "node dev-server.js"
+  },
+  "keywords": [
+    "fridge",
+    "recipe",
+    "openrouter",
+    "gemma"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vercel": "^39.0.0"
+  }
+}

@@ -1,0 +1,14 @@
+# 환경 변수 (API 키 보호)
+.env
+.env.local
+.env.*.local
+
+# 종속성
+node_modules/
+
+# Vercel 캐시 및 빌드 결과물
+.vercel/
+
+# 운영체제 생성 파일
+.DS_Store
+Thumbs.db

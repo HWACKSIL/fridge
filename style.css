@@ -1,0 +1,1008 @@
+/* ==========================================================================
+   AI 냉장고 파먹기 웹앱 스타일시트 (style.css)
+   - 모바일 퍼스트(Mobile-First) 반응형 디자인
+   - 깔끔한 주방/요리 테마 컬러 (#22c55e 에메랄드 그린 포인트)
+   ========================================================================== */
+
+/* 기본 리셋 및 폰트 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 상단 고정 헤더 */
+.app-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.header-nav-btns {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.nav-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.nav-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.badge-count {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.72rem;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.logo-icon {
+  font-size: 1.7rem;
+}
+
+.logo-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* 메인 컨테이너 */
+.main-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 20px 16px 80px 16px;
+}
+
+/* 단계 표시 인디케이터 */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding: 0 8px;
+}
+
+.step-badge {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #94a3b8;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.step-badge.active {
+  background-color: #10b981;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background-color: #e2e8f0;
+  margin: 0 8px;
+}
+
+/* 카드 컴포넌트 */
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.section-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+/* 이미지 드롭존 */
+.drop-zone {
+  border: 2px dashed #cbd5e1;
+  border-radius: 14px;
+  padding: 36px 16px;
+  text-align: center;
+  background-color: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.drop-zone:hover,
+.drop-zone.drag-over {
+  border-color: #10b981;
+  background-color: #ecfdf5;
+}
+
+.upload-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.drop-text {
+  font-size: 0.95rem;
+  color: #475569;
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+
+/* 버튼 그룹 및 버튼 공통 스타일 */
+.btn-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #059669;
+}
+
+.btn-secondary {
+  background-color: #e2e8f0;
+  color: #334155;
+}
+
+.btn-secondary:hover {
+  background-color: #cbd5e1;
+}
+
+.btn-action {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.05rem;
+  background-color: #0284c7;
+  color: #ffffff;
+  margin-top: 16px;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+}
+
+.btn-action:hover {
+  background-color: #0369a1;
+}
+
+.btn-sm {
+  padding: 10px 16px;
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+/* 이미지 미리보기 컨테이너 */
+.preview-container {
+  margin-top: 16px;
+}
+
+.preview-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-height: 380px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-image-wrapper img {
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+  object-fit: contain;
+  display: block;
+}
+
+.btn-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(15, 23, 42, 0.7);
+  color: #ffffff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-close:hover {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.preview-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: #64748b;
+  padding: 0 4px;
+}
+
+/* 재료 태그 컨테이너 */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  min-height: 40px;
+}
+
+/* 로딩 스피너 및 진행 상태 박스 */
+.loading-box {
+  margin-top: 20px;
+  padding: 24px 16px;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid #bbf7d0;
+  border-top-color: #10b981;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 12px auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 4px;
+}
+
+.loading-sub {
+  font-size: 0.8rem;
+  color: #047857;
+}
+
+/* 재료 태그 아이템 및 카테고리 스타일 */
+.tag-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.tag-item .tag-desc {
+  font-size: 0.75rem;
+  color: #059669;
+  background-color: #d1fae5;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+.tag-remove {
+  background: none;
+  border: none;
+  color: #047857;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag-remove:hover {
+  color: #dc2626;
+}
+
+/* ==========================================================================
+   2단계: 레시피 필터 및 카드 컴포넌트 스타일
+   ========================================================================== */
+
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.btn-text-back {
+  background: none;
+  border: none;
+  color: #0284c7;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.btn-text-back:hover {
+  background-color: #f0f9ff;
+  text-decoration: underline;
+}
+
+/* 선택된 재료 요약 배지 */
+.selected-ingredients-summary {
+  background-color: #f1f5f9;
+  padding: 12px 14px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.summary-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #475569;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.summary-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.summary-chip {
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  color: #334155;
+  font-weight: 500;
+}
+
+/* 필터 입력 폼 */
+.filter-group {
+  margin-bottom: 14px;
+}
+
+.filter-row {
+  display: flex;
+  gap: 12px;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.filter-label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 0.92rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #0f172a;
+  outline: none;
+}
+
+.filter-select:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.filter-checkbox-group {
+  margin: 16px 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #334155;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #10b981;
+}
+
+/* 2단계 레시피 결과 카드 그리드 */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.recipe-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+.recipe-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.recipe-card-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.recipe-card-badges {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.badge-time {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.badge-difficulty {
+  background-color: #e0e7ff;
+  color: #4338ca;
+}
+
+.badge-category {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.recipe-card-summary {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.recipe-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-detail {
+  flex: 1;
+  padding: 10px;
+  font-size: 0.9rem;
+  background-color: #10b981;
+  color: #ffffff;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-detail:hover {
+  background-color: #059669;
+}
+
+.btn-card-save {
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-card-save.saved {
+  background-color: #fef3c7;
+  border-color: #f59e0b;
+  color: #b45309;
+}
+
+/* ==========================================================================
+   레시피 상세 모달 창 (Modal)
+   ========================================================================== */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.modal-container {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  animation: modalUp 0.25s ease-out;
+}
+
+@keyframes modalUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  padding: 20px 24px 16px 24px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #64748b;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-btn:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.modal-body {
+  padding: 20px 24px;
+  overflow-y: auto;
+  line-height: 1.6;
+}
+
+.modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-bookmark {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #f59e0b;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.btn-bookmark:hover {
+  background-color: #d97706;
+}
+
+/* 모달 상세 콘텐츠 세부 스타일 */
+.modal-meta-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.modal-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 18px 0 8px 0;
+  border-left: 4px solid #10b981;
+  padding-left: 8px;
+}
+
+.ingredients-box {
+  background-color: #f8fafc;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+.ingredients-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingredients-box li {
+  font-size: 0.9rem;
+  color: #334155;
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.substitute-alert {
+  background-color: #fefce8;
+  border: 1px solid #fef08a;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  color: #854d0e;
+  margin-bottom: 16px;
+}
+
+.steps-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.step-item {
+  margin-bottom: 16px;
+  position: relative;
+  padding-left: 36px;
+}
+
+.step-num {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  background-color: #10b981;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.step-action {
+  font-size: 0.95rem;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.step-tip {
+  font-size: 0.82rem;
+  color: #059669;
+  background-color: #ecfdf5;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.chef-tip-box {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-size: 0.88rem;
+  color: #1e40af;
+}
+
+/* ==========================================================================
+   3단계: 레시피 보관함 및 프로필 설정 스타일
+   ========================================================================== */
+
+/* 보관함 상단 툴바 */
+.saved-toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.search-input-wrapper {
+  flex: 1;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+}
+
+.search-input-wrapper input:focus {
+  border-color: #10b981;
+}
+
+.select-sort {
+  width: auto;
+  min-width: 130px;
+  padding: 10px 12px;
+}
+
+/* 보관함 빈 상태 */
+.empty-state {
+  text-align: center;
+  padding: 48px 16px;
+}
+
+.empty-icon {
+  font-size: 3.5rem;
+  margin-bottom: 12px;
+}
+
+.empty-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.empty-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+/* 공통 텍스트 인풋 */
+.text-input {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 0.92rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+}
+
+.text-input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.help-text {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-top: 4px;
+  display: block;
+}
+
+/* 체크박스 필 그리드 */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.checkbox-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: #334155;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+}
+
+.checkbox-pill:hover {
+  background-color: #f1f5f9;
+}
+
+.checkbox-pill input[type="checkbox"] {
+  accent-color: #10b981;
+}
+
+/* 모달 내 별점 및 조리 메모 영역 */
+.user-interaction-box {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #fdf4ff;
+  border: 1px solid #f0abfc;
+  border-radius: 14px;
+}
+
+.interaction-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #86198f;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.star-rating {
+  display: inline-flex;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.star-item {
+  font-size: 1.4rem;
+  color: #cbd5e1;
+  transition: color 0.1s ease;
+}
+
+.star-item.active {
+  color: #f59e0b;
+}
+
+.note-textarea {
+  width: 100%;
+  height: 70px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e879f9;
+  font-size: 0.88rem;
+  resize: vertical;
+  outline: none;
+  background: #ffffff;
+  margin-top: 8px;
+}
+
+.note-textarea:focus {
+  border-color: #c026d3;
+}
+
+.btn-share {
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+/* 재료 수동 추가 인풋 */
+.add-ingredient-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.add-ingredient-form input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.add-ingredient-form input:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
